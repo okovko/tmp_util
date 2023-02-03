@@ -13,7 +13,7 @@ struct make_reverse_index_sequence_helper;
 template <std::size_t N, std::size_t... Is>
 struct make_reverse_index_sequence_helper<N, std::index_sequence<Is...>> : std::index_sequence<(N - Is - 1)...> {};
 
-template <size_t N>
+template <std::size_t N>
 struct make_reverse_index_sequence : make_reverse_index_sequence_helper<N, decltype(std::make_index_sequence<N>{})> {};
 
 #endif // INTEGER_SEQUENCE_UTIL_H_
